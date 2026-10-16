@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#17112b" />
+  <meta name="description" content="DRIFT — an after-hours dessert and tea lounge concept told through an immersive, swipe-driven experience." />
+  <title>DRIFT — Dessert / Tea / After Hours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="module" src="./main.js"></script>
+</head>
+<body class="drift-page">
+  <a class="skip-link" href="#experience">Skip to the experience</a>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="drift-header">
+    <a class="drift-brand" href="/" aria-label="Return to FORM Studio collection"><span class="brand-mark">D.</span><span><strong data-brand-name>DRIFT</strong><small>DESSERT / TEA / AFTER HOURS</small></span></a>
+    <div class="header-right"><span class="open-status"><i></i> OPEN LATE</span><span id="slide-count" class="slide-count" aria-live="polite">01 <i>/</i> 05</span></div>
+  </header>
+  <main id="experience" class="experience" aria-label="DRIFT lounge story">
+    <div class="slide-deck" id="slide-deck" role="region" aria-roledescription="carousel" aria-label="Swipe through the DRIFT menu" tabindex="0"></div>
+    <div class="bottom-ui">
+      <div class="swipe-hint" id="swipe-hint"><span class="swipe-glyph" aria-hidden="true">↔</span><span>DRAG TO WANDER</span><i></i></div>
+      <div class="slide-nav">
+        <button class="arrow-btn" id="prev-slide" type="button" aria-label="Previous slide">←</button>
+        <div class="slide-dots" id="slide-dots" aria-label="Choose a slide"></div>
+        <button class="arrow-btn" id="next-slide" type="button" aria-label="Next slide">→</button>
+      </div>
+    </div>
+  </main>
+  <a class="back-to-studio" href="/">↖ FORM STUDIO / COLLECTION</a>
+  <div class="sr-only" id="slide-live" aria-live="polite"></div>
+</body>
+</html>

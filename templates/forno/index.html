@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#d7301f"><meta name="description" content="FORNO — a wood-fired pizzeria website concept with an interactive pizza builder.">
+<title>FORNO — Wood-Fired Pizzeria Template</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#d7301f;--cream:#fff4dc;--ink:#2a1810;--green:#2f6b3a;--gold:#f2b134}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a,button,input,label{font:inherit}a:focus-visible,button:focus-visible,input:focus-visible+label{outline:3px solid var(--gold);outline-offset:3px}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:var(--cream);border-bottom:3px solid var(--ink)}
+nav b{font-family:'Alfa Slab One',serif;font-size:1.6rem;color:var(--red);letter-spacing:.04em;font-weight:400}
+nav a{color:var(--ink);text-decoration:none;font-weight:700;margin-left:22px;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}nav a:hover{color:var(--red)}
+.hero{background:var(--red);color:var(--cream);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:3vw;padding:70px 5vw 80px;position:relative;overflow:hidden;min-height:82vh}
+.hero:before{content:'';position:absolute;inset:0;background:radial-gradient(#00000026 1.5px,transparent 1.6px) 0 0/16px 16px;pointer-events:none}.hero>*{position:relative}
+.kick{display:inline-block;font-weight:700;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;border:2px solid var(--cream);padding:6px 12px;border-radius:99px}
+.hero h1{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(3.2rem,9vw,8rem);line-height:.92;margin:22px 0}
+.hero h1 em{font-style:normal;color:var(--gold);display:inline-block;animation:throb 2.4s ease-in-out infinite}@keyframes throb{50%{transform:scale(1.05) rotate(-1.5deg)}}
+.hero p{max-width:440px;font-size:1.1rem;margin-bottom:30px;opacity:.94}
+.btn{display:inline-block;background:var(--cream);color:var(--ink);padding:14px 28px;border:3px solid var(--ink);border-radius:99px;font-weight:700;text-decoration:none;box-shadow:5px 5px 0 var(--ink);transition:.15s;cursor:pointer;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink);background:var(--gold)}
+.plate{aspect-ratio:1;max-width:500px;width:100%;justify-self:center}.plate svg{width:100%;height:100%;filter:drop-shadow(0 22px 30px #0006);animation:spin 60s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.spark{position:absolute;bottom:-10px;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px 2px #ff9a2e;animation:rise var(--t) linear infinite;opacity:0}
+@keyframes rise{0%{transform:translate(0,0);opacity:0}10%{opacity:1}100%{transform:translate(var(--x),-80vh);opacity:0}}
+.tp{transform-box:fill-box;transform-origin:center;animation:drop .5s cubic-bezier(.3,1.5,.5,1) both}@keyframes drop{from{opacity:0;transform:translateY(-34px) scale(1.5)}}
+.mq{background:var(--gold);border-block:3px solid var(--ink);overflow:hidden;white-space:nowrap;padding:12px 0;font-family:'Alfa Slab One',serif;font-size:1.15rem}.mq div{display:inline-block;animation:m 22s linear infinite}@keyframes m{to{transform:translateX(-50%)}}
+section{padding:90px 5vw}h2{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1;margin-bottom:14px}.lead{max-width:520px;margin-bottom:44px;opacity:.82}
+.menu{display:grid;grid-template-columns:.9fr 1.1fr;gap:5vw;align-items:start}
+.pv{position:sticky;top:100px;background:var(--gold);border:3px solid var(--ink);border-radius:50%;aspect-ratio:1;padding:5%;box-shadow:8px 8px 0 var(--ink)}.pv svg{width:100%;height:100%}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 20px;width:100%;text-align:left;background:none;border:0;border-bottom:3px solid var(--ink);padding:22px 12px;color:var(--ink);cursor:pointer;transition:.25s}
+.row:hover,.row:focus-visible,.row.on{background:var(--ink);color:var(--cream);padding-left:26px}
+.row h3{font-family:'Alfa Slab One',serif;font-size:1.5rem;font-weight:400}.row span{font-weight:700;font-size:1.3rem;color:var(--red)}.row:hover span,.row.on span,.row:focus-visible span{color:var(--gold)}.row p{grid-column:1/-1;opacity:.82;font-size:.92rem}
+.build{background:var(--green);color:var(--cream)}.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}.bplate{background:var(--cream);border:3px solid var(--ink);border-radius:50%;aspect-ratio:1;padding:4%;box-shadow:8px 8px 0 var(--ink);max-width:480px;width:100%}.bplate svg{width:100%;height:100%}
+#chips{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}#chips label{display:inline-block;cursor:pointer;border:3px solid var(--cream);padding:10px 18px;border-radius:99px;font-weight:700;transition:.2s}#chips label small{opacity:.8;font-weight:500}
+#chips input:checked+label{background:var(--gold);color:var(--ink);border-color:var(--ink);box-shadow:3px 3px 0 var(--ink)}#chips label:hover{transform:translateY(-2px)}
+.total{font-family:'Alfa Slab One',serif;font-size:2.4rem;margin-bottom:20px}.total small{font:700 .8rem 'DM Sans';letter-spacing:.15em;text-transform:uppercase;display:block;opacity:.8}
+.oven{background:var(--ink);color:var(--cream);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}.oven b{display:block;font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(2.4rem,5vw,3.6rem);color:var(--gold)}
+.visit{text-align:center}.visit p{max-width:480px;margin:0 auto 28px}
+footer{background:var(--red);color:var(--cream);text-align:center;padding:30px 20px;font-size:.78rem;font-weight:700;letter-spacing:.08em}
+.studio-return{position:fixed;left:15px;bottom:15px;z-index:50;background:var(--gold);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);padding:7px 10px;text-decoration:none;font-size:9px;font-weight:700;color:var(--ink)}
+@media(max-width:800px){.hero,.menu,.bgrid{grid-template-columns:1fr}.hero{padding-top:50px}.plate{max-width:340px}.pv{position:static;max-width:340px;margin:0 auto 30px}nav a{margin-left:12px;font-size:.75rem}section{padding:70px 6vw}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style></head><body>
+<nav><b>FORNO</b><div><a href="#menu">Menu</a><a href="#build">Build</a><a href="#visit">Visit</a></div></nav>
+<main><header class="hero"><div><span class="kick">Pizza Napoletana · Oak-fired</span><h1>Fired at<br><em>450°C.</em></h1><p>Seventy-two-hour dough, tomatoes from volcanic soil and a dome oven that finishes every pie in ninety seconds.</p><a class="btn" href="#build">Build your pizza</a></div><div class="plate"><svg id="hero-pizza" viewBox="0 0 300 300" role="img" aria-label="A pizza with pepperoni, mushrooms, olives, basil and chili"></svg></div></header>
+<div class="mq" aria-hidden="true"><div>★ 72-HOUR DOUGH ★ OAK-FIRED ★ SAN MARZANO ★ FIOR DI LATTE ★ 90 SECONDS ★ 72-HOUR DOUGH ★ OAK-FIRED ★ SAN MARZANO ★ FIOR DI LATTE ★ 90 SECONDS </div></div>
+<section id="menu"><h2>The Classics</h2><p class="lead">Hover or tap a pizza to see it come out of the oven.</p><div class="menu"><div class="pv"><svg id="pv" viewBox="0 0 300 300" role="img" aria-label="Selected pizza preview"></svg></div><div id="rows"></div></div></section>
+<section id="build" class="build"><h2>Build your own</h2><p class="lead">Base is ₹349. Toppings drop on in real time.</p><div class="bgrid"><div class="bplate"><svg id="bsvg" viewBox="0 0 300 300" role="img" aria-label="Your custom pizza"></svg></div><div><div id="chips" role="group" aria-label="Toppings"></div><div class="total"><small>Your total</small><output id="total" aria-live="polite">₹349</output></div><a class="btn" id="enq" href="mailto:hello@formstudio.example">Send as enquiry</a></div></div></section>
+<section class="oven" aria-label="Oven facts"><div><b>450°C</b>Oak-fired dome</div><div><b>90 sec</b>Oven to table</div><div><b>72 hrs</b>Dough rest</div><div><b>1</b>Oven. No shortcuts.</div></section>
+<section id="visit" class="visit"><h2>Come hungry.</h2><p>Walk-ins welcome, tables for groups on request. Hours and menu are illustrative for this demo.</p><a class="btn" href="mailto:hello@formstudio.example?subject=FORNO%20table%20enquiry">Ask about a table</a></section></main>
+<footer>© 2026 FORNO · FORM STUDIO DEMO CONCEPT · NOT A LIVE ORDERING SYSTEM</footer><a class="studio-return" href="/">↖ FORM STUDIO / COLLECTION</a>
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const rnd=(i,n,s)=>{const a=i*2.39996+s,r=20+Math.sqrt((i+.5)/n)*92;return[150+Math.cos(a)*r,150+Math.sin(a)*r,(i*53+s*40)%360]};
+const T={pepperoni:{n:10,s:.3,f:()=>`<circle r="13" fill="#b3261e"/><circle r="13" fill="none" stroke="#7d1812" stroke-width="2"/><circle cx="-4" cy="-3" r="2" fill="#dc5a49"/><circle cx="4" cy="4" r="2" fill="#dc5a49"/>`},
+mushroom:{n:8,s:1.1,f:()=>`<path d="M-12 2a12 11 0 0 1 24 0z" fill="#d9cbb3" stroke="#8c7a5e" stroke-width="2"/><rect x="-4" y="2" width="8" height="9" rx="2" fill="#efe4cf" stroke="#8c7a5e" stroke-width="2"/>`},
+olive:{n:9,s:2,f:()=>`<circle r="6" fill="none" stroke="#1f1a14" stroke-width="4"/>`},
+basil:{n:8,s:2.7,f:()=>`<path d="M0-12C10-6 10 6 0 12 -10 6 -10-6 0-12z" fill="#2f6b3a"/><path d="M0-10V10" stroke="#1d4a27" stroke-width="1.5"/>`},
+chili:{n:7,s:3.6,f:()=>`<rect x="-3" y="-11" width="6" height="22" rx="3" fill="#e0301e"/><rect x="-3" y="-11" width="6" height="5" rx="2" fill="#2f6b3a"/>`}};
+const base=()=>{let s='<circle cx="150" cy="150" r="146" fill="#e2a24f"/><circle cx="150" cy="150" r="146" fill="none" stroke="#b9772c" stroke-width="3"/>';for(let i=0;i<16;i++){const a=i*.393+.2;s+=`<circle cx="${150+Math.cos(a)*136}" cy="${150+Math.sin(a)*136}" r="${3+i%3}" fill="#6b3a14" opacity=".55"/>`}s+='<circle cx="150" cy="150" r="124" fill="#c8321f"/><circle cx="150" cy="150" r="118" fill="#f4d98c"/>';[[110,120,22,12],[185,110,20,11],[150,180,26,13],[200,175,16,9],[105,185,15,9],[160,125,15,8]].forEach(([x,y,rx,ry],i)=>s+=`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#fff3c4" opacity=".75" transform="rotate(${i*37} ${x} ${y})"/>`);return s};
+const render=(el,list)=>{let s=base(),k=0;list.forEach(name=>{const t=T[name];for(let i=0;i<t.n;i++){const[x,y,r]=rnd(i,t.n,t.s);s+=`<g class="tp" style="animation-delay:${(k++%12)*40}ms"><g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${r.toFixed(0)})">${t.f()}</g></g>`}});el.innerHTML=s};
+render(document.getElementById('hero-pizza'),['pepperoni','mushroom','olive','basil','chili']);
+const M=[{n:'Margherita',d:'San Marzano tomato, fior di latte, basil, olive oil.',p:349,t:['basil']},{n:'Diavola',d:'Spicy pepperoni, chili, tomato, mozzarella.',p:449,t:['pepperoni','chili']},{n:'Funghi',d:'Roasted mushroom, olives, basil, garlic oil.',p:429,t:['mushroom','olive','basil']},{n:'The Works',d:'Everything the oven is proud of.',p:499,t:['pepperoni','mushroom','olive','basil','chili']}];
+const rows=document.getElementById('rows'),pv=document.getElementById('pv');
+M.forEach((m,i)=>{const b=document.createElement('button');b.type='button';b.className='row'+(i?'':' on');b.innerHTML=`<h3>${m.n}</h3><span>₹${m.p}</span><p>${m.d}</p>`;const act=()=>{if(b.classList.contains('on')&&i)return;rows.querySelectorAll('.row').forEach(r=>r.classList.remove('on'));b.classList.add('on');render(pv,m.t)};['mouseenter','focus','click'].forEach(ev=>b.addEventListener(ev,act));rows.appendChild(b)});render(pv,M[0].t);
+const P={pepperoni:60,mushroom:40,olive:30,basil:20,chili:20},chips=document.getElementById('chips'),bsvg=document.getElementById('bsvg');
+Object.keys(P).forEach(k=>chips.insertAdjacentHTML('beforeend',`<span><input class="sr-only" type="checkbox" id="c-${k}" value="${k}"${k==='basil'?' checked':''}><label for="c-${k}">${k[0].toUpperCase()+k.slice(1)} <small>+₹${P[k]}</small></label></span>`));
+function update(){const l=[...chips.querySelectorAll('input:checked')].map(i=>i.value),total=349+l.reduce((a,k)=>a+P[k],0);render(bsvg,l);document.getElementById('total').textContent='₹'+total;document.getElementById('enq').href='mailto:hello@formstudio.example?subject='+encodeURIComponent('FORNO pizza enquiry')+'&body='+encodeURIComponent('Build: '+(l.join(', ')||'plain cheese base')+' — approx ₹'+total)}
+chips.addEventListener('change',update);update();
+if(!reduce){const hero=document.querySelector('.hero');for(let i=0;i<16;i++){const s=document.createElement('i');s.className='spark';s.setAttribute('aria-hidden','true');s.style.cssText=`left:${Math.random()*100}%;--t:${4+Math.random()*5}s;--x:${(Math.random()-.5)*80}px;animation-delay:-${Math.random()*9}s`;hero.appendChild(s)}}
+</script></body></html>

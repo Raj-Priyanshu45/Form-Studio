@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffd6e8"><meta name="description" content="SCOOP THEORY — a playful gelato shop website concept with an interactive cone builder.">
+<title>SCOOP THEORY — Gelato Template</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff9ecb;--mint:#9ae6c8;--lemon:#ffe58a;--blue:#9cc9ff;--ink:#3a2340;--bg:#fff2f8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font-family:Fredoka,sans-serif;overflow-x:hidden}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+a,button,input{font:inherit}a:focus-visible,button:focus-visible,input:focus-visible+label{outline:3px solid var(--ink);outline-offset:3px}
+nav{position:sticky;top:12px;z-index:20;margin:12px 4vw 0;display:flex;justify-content:space-between;align-items:center;padding:10px 12px 10px 22px;background:#fff;border-radius:99px;box-shadow:0 6px 0 var(--ink),0 0 0 3px var(--ink)}
+nav b{font-family:'Baloo 2',cursive;font-size:1.4rem}nav a{color:var(--ink);text-decoration:none;font-weight:600;padding:8px 14px;border-radius:99px;transition:.2s}nav a:hover{background:var(--lemon)}
+.hero{text-align:center;padding:60px 5vw 40px;position:relative}
+.hero h1{font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(3.4rem,12vw,10rem);line-height:.9;letter-spacing:-.02em}
+.hero h1 span{display:inline-block;animation:wob 2.6s ease-in-out infinite;animation-delay:calc(var(--i)*.1s)}@keyframes wob{50%{transform:translateY(-14px) rotate(var(--r,3deg))}}
+.hero h1 .a{color:var(--pink);-webkit-text-stroke:3px var(--ink)}.hero h1 .b{color:var(--mint);-webkit-text-stroke:3px var(--ink)}
+.hero p{max-width:460px;margin:24px auto 30px;font-size:1.15rem}
+.btn{display:inline-block;background:var(--lemon);border:3px solid var(--ink);border-radius:99px;padding:14px 30px;font-weight:700;text-decoration:none;color:var(--ink);box-shadow:0 5px 0 var(--ink);transition:.12s;cursor:pointer}
+.btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}.btn:active{transform:translateY(5px);box-shadow:0 0 0 var(--ink)}
+.blob{position:absolute;border-radius:50%;opacity:.7;animation:fl 9s ease-in-out infinite;z-index:-1}@keyframes fl{50%{transform:translate(20px,-30px) scale(1.1)}}
+section{padding:80px 5vw}h2{font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1;margin-bottom:10px;text-align:center}.lead{text-align:center;max-width:480px;margin:0 auto 44px;opacity:.8}
+.builder{display:grid;grid-template-columns:.9fr 1.1fr;gap:4vw;align-items:center;max-width:1100px;margin:auto;background:var(--blue);border:3px solid var(--ink);border-radius:36px;padding:4vw;box-shadow:0 10px 0 var(--ink)}
+.stage{background:#fff;border:3px solid var(--ink);border-radius:28px;aspect-ratio:3/4;display:grid;place-items:end center;overflow:hidden;position:relative}
+.stage svg{width:78%;height:auto;margin-bottom:4%;overflow:visible}
+.sc{transform-box:fill-box;transform-origin:center bottom;animation:plop .6s cubic-bezier(.3,1.7,.5,1) both}@keyframes plop{from{transform:translateY(-120px) scale(.6,1.3);opacity:0}60%{transform:scale(1.12,.88)}}
+.dripy{animation:dr 3s ease-in-out infinite;transform-box:fill-box;transform-origin:top}@keyframes dr{50%{transform:scaleY(1.35)}}
+.flavs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}
+.flavs label{display:flex;align-items:center;gap:10px;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:10px 12px;cursor:pointer;font-weight:600;transition:.15s}.flavs label:hover{transform:translateY(-3px) rotate(-1deg)}
+.flavs i{width:26px;height:26px;border-radius:50%;border:3px solid var(--ink);flex:none;background:var(--c)}
+.flavs input:checked+label{background:var(--lemon);box-shadow:0 4px 0 var(--ink)}
+.meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.price{font-family:'Baloo 2',cursive;font-size:2.4rem}.price small{font:600 .8rem Fredoka;display:block;opacity:.7}
+.toggle{display:inline-flex;align-items:center;gap:8px;font-weight:600;cursor:pointer}
+.hint{font-size:.9rem;opacity:.8;min-height:1.4em}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:22px;max-width:1100px;margin:auto}
+.card{border:3px solid var(--ink);border-radius:28px;padding:26px;background:var(--c);box-shadow:0 7px 0 var(--ink);transition:.2s}.card:hover{transform:translateY(-6px) rotate(-1deg)}
+.card span{font-size:3rem;display:block;animation:wob 3s ease-in-out infinite}.card h3{font-family:'Baloo 2',cursive;font-size:1.6rem;margin:6px 0}.card b{display:block;margin-top:10px;font-size:1.2rem}
+.rv{opacity:0;transform:translateY(34px) scale(.97);transition:opacity .7s,transform .7s cubic-bezier(.3,1.4,.5,1)}.rv.on{opacity:1;transform:none}
+.mq{background:var(--ink);color:var(--lemon);overflow:hidden;white-space:nowrap;padding:12px 0;font-family:'Baloo 2',cursive;font-size:1.3rem}.mq div{display:inline-block;animation:m 20s linear infinite}@keyframes m{to{transform:translateX(-50%)}}
+footer{text-align:center;padding:36px 20px 80px;font-size:.85rem;opacity:.75}
+.studio-return{position:fixed;left:15px;bottom:15px;z-index:50;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:7px 12px;text-decoration:none;font-size:9px;font-weight:700;color:var(--ink)}
+@media(max-width:800px){.builder{grid-template-columns:1fr}.stage{max-width:320px;margin:auto;width:100%}nav a:not(:last-child){display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<nav><b>🍦 Scoop Theory</b><div><a href="#build">Build</a><a href="#board">Flavours</a><a href="#visit">Visit</a></div></nav>
+<main><header class="hero"><div class="blob" style="width:200px;height:200px;background:var(--mint);left:4%;top:60px" aria-hidden="true"></div><div class="blob" style="width:150px;height:150px;background:var(--lemon);right:6%;top:240px;animation-delay:-3s" aria-hidden="true"></div>
+<h1 id="ttl" aria-label="Scoop Theory"></h1><p>Small-batch gelato, big opinions. Stack up to three scoops, then tell us how it went.</p><a class="btn" href="#build">Build a cone</a></header>
+<div class="mq" aria-hidden="true"><div>🍓 PISTACHIO ✦ SALTED CARAMEL ✦ MANGO LASSI ✦ DARK CHOCOLATE ✦ BLUEBERRY ✦ 🍓 PISTACHIO ✦ SALTED CARAMEL ✦ MANGO LASSI ✦ DARK CHOCOLATE ✦ BLUEBERRY ✦ </div></div>
+<section id="build"><h2 class="rv">Stack your cone</h2><p class="lead rv">Pick up to three flavours. The cone does the rest.</p>
+<div class="builder rv"><div class="stage"><svg id="cone" viewBox="0 0 200 320" role="img" aria-label="Your gelato cone"></svg></div>
+<div><div class="flavs" id="flavs" role="group" aria-label="Flavours"></div><p class="hint" id="hint" aria-live="polite">Pick up to 3 flavours.</p>
+<div class="meta"><div class="price"><small>Your cone</small><output id="price" aria-live="polite">₹120</output></div><label class="toggle"><input type="checkbox" id="spr"> Rainbow sprinkles +₹20</label></div><p style="margin-top:20px"><a class="btn" id="enq" href="mailto:hello@formstudio.example">Send as enquiry</a></p></div></div></section>
+<section id="board"><h2 class="rv">Today's board</h2><p class="lead rv">Illustrative flavours and prices for this concept.</p><div class="board" id="board-list"></div></section>
+<section id="visit" style="text-align:center"><h2 class="rv">Find the cone</h2><p class="lead">Open 11 AM – 11 PM, rain or shine. This is a demo concept, not a live ordering system.</p><a class="btn" href="mailto:hello@formstudio.example?subject=Scoop%20Theory%20enquiry">Say hello</a></section></main>
+<footer>© 2026 SCOOP THEORY · FORM STUDIO DEMO CONCEPT</footer><a class="studio-return" href="/">↖ FORM STUDIO / COLLECTION</a>
+<script>
+const F=[{n:'Strawberry',c:'#ff9ecb',e:'🍓',d:'Real fruit, light & bright.'},{n:'Pistachio',c:'#b7e08a',e:'🌰',d:'Roasted nuts, zero green dye.'},{n:'Mango Lassi',c:'#ffc857',e:'🥭',d:'Alphonso, yogurt, cardamom.'},{n:'Dark Chocolate',c:'#7a4a37',e:'🍫',d:'70% cacao, intensely fudgy.'},{n:'Blueberry',c:'#9d8cff',e:'🫐',d:'Tangy swirl, cheesecake base.'},{n:'Salted Caramel',c:'#e6a15c',e:'🧂',d:'Burnt sugar, flaky salt.'}];
+const t=document.getElementById('ttl');'SCOOP'.split('').forEach((ch,i)=>t.insertAdjacentHTML('beforeend',`<span class="a" style="--i:${i};--r:${i%2?-4:4}deg" aria-hidden="true">${ch}</span>`));t.insertAdjacentHTML('beforeend','<br>');'THEORY'.split('').forEach((ch,i)=>t.insertAdjacentHTML('beforeend',`<span class="b" style="--i:${i+5};--r:${i%2?4:-4}deg" aria-hidden="true">${ch}</span>`));
+const fl=document.getElementById('flavs'),sel=[];
+F.forEach((f,i)=>fl.insertAdjacentHTML('beforeend',`<span><input class="sr-only" type="checkbox" id="f${i}" value="${i}"><label for="f${i}"><i style="--c:${f.c}"></i>${f.n}</label></span>`));
+document.getElementById('board-list').innerHTML=F.map(f=>`<article class="card rv" style="--c:${f.c}66"><span aria-hidden="true">${f.e}</span><h3>${f.n}</h3><p>${f.d}</p><b>₹60 / scoop</b></article>`).join('');
+const cone=document.getElementById('cone');
+function draw(){let s='<path d="M50 150 L100 310 L150 150 Z" fill="#e8b96a" stroke="#3a2340" stroke-width="4" stroke-linejoin="round"/>';for(let i=0;i<5;i++)s+=`<path d="M${58+i*14} ${158+i*6}L${100-i*2+ (i-2)*0} 300" stroke="#c4903f" stroke-width="3" fill="none" opacity=".6"/>`;s+='<path d="M56 164L138 220M144 164L62 220M70 192L130 240M130 192L70 240" stroke="#c4903f" stroke-width="3" opacity=".55"/>';
+const sp=document.getElementById('spr').checked;
+sel.forEach((idx,k)=>{const y=150-k*52,f=F[idx];s+=`<g class="sc" style="animation-delay:${k*60}ms"><path d="M42 ${y}a58 52 0 0 1 116 0q0 14-14 14l-6 12q-4 8-8 0q-4-10-12 0q-5 10-10 0q-4-6-10 0q-6 8-10 0q-4-8-10-2q-8 6-14-4l-8-4q-4-4-4-12z" fill="${f.c}" stroke="#3a2340" stroke-width="4" stroke-linejoin="round"/><ellipse cx="${80}" cy="${y-24}" rx="12" ry="7" fill="#fff" opacity=".45" transform="rotate(-25 80 ${y-24})"/>${sp?[...Array(9)].map((_,j)=>`<rect x="${52+j*11}" y="${y-30+(j*13%24)}" width="9" height="3.5" rx="2" fill="${['#ff5a8a','#5ac8fa','#ffd23f','#7bd88f'][j%4]}" transform="rotate(${j*40} ${56+j*11} ${y-28+(j*13%24)})"/>`).join(''):''}</g>`});
+cone.innerHTML=s;const p=120+sel.length*0+0;}
+function update(){const total=60+sel.length*60-0;const price=sel.length?60*sel.length+(document.getElementById('spr').checked?20:0)+0:0;document.getElementById('price').textContent='₹'+(sel.length?price:0);document.getElementById('hint').textContent=sel.length?sel.length===3?'Max scoops reached — uncheck one to swap.':'Add up to '+(3-sel.length)+' more.':'Pick up to 3 flavours.';document.getElementById('enq').href='mailto:hello@formstudio.example?subject='+encodeURIComponent('Scoop Theory cone enquiry')+'&body='+encodeURIComponent('Cone: '+(sel.map(i=>F[i].n).join(', ')||'none yet')+' — approx ₹'+price);draw()}
+fl.addEventListener('change',e=>{const i=+e.target.value;if(e.target.checked){if(sel.length>=3){e.target.checked=false;return}sel.push(i)}else sel.splice(sel.indexOf(i),1);update()});document.getElementById('spr').addEventListener('change',update);update();
+const io=('IntersectionObserver'in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12}):null;document.querySelectorAll('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%3)*.08+'s';io?io.observe(e):e.classList.add('on')});
+</script></body></html>
