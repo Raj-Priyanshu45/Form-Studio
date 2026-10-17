@@ -1,3 +1,7 @@
+import { inject } from '@vercel/analytics';
+
+// Initialize Vercel Web Analytics
+inject();
 const IMG = {
   ramen: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1800&q=88',
   noodles: 'https://images.unsplash.com/photo-1569929232520-3d7aef1e6e8b?auto=format&fit=crop&w=1200&q=85',
